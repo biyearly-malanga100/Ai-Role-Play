@@ -1,0 +1,8 @@
+{
+    "player_status": {
+        "current_location": "Unknown",
+        "inventory": [],
+        "active_quests": []
+    },
+    "entities": {}
+}
