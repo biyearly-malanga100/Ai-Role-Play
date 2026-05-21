@@ -53,7 +53,7 @@ HTML_DASHBOARD = """
         <div class="flex-1 flex flex-col bg-gray-900 p-6 overflow-y-auto">
             
             <div id="tab-chat" class="flex-1 flex flex-col space-y-4 max-w-4xl mx-auto w-full">
-                <div id="chat-box" class="flex-1 bg-gray-800 border border-gray-700 rounded-xl p-4 overflow-y-auto space-y-4 shadow-inner min-h-[450px] max-h-[550px]"></div>
+                <div id="chat-box" class="flex-1 bg-gray-800 border border-gray-700 rounded-xl p-4 overflow-y-auto space-y-4 shadow-inner min-h-[600px] max-h-[800px]"></div>
                 
                 <div class="flex items-center space-x-3 bg-gray-800 p-2 rounded-xl border border-gray-700 shadow-md">
                     <input type="text" id="user-input" placeholder="Interact with your generated simulation world..." class="flex-1 bg-transparent text-gray-100 placeholder-gray-500 focus:outline-none px-3 py-2 text-base" onkeydown="if(event.key === 'Enter') sendMessage()">
@@ -129,21 +129,49 @@ HTML_DASHBOARD = """
                 wrapper.className = `flex flex-col ${isUser ? 'items-end' : 'items-start'} space-y-1 group`;
                 
                 wrapper.innerHTML = `
-                    <div class="text-xs text-gray-500 font-semibold px-2">${isUser ? 'User' : 'Simulator'}</div>
-                    <div class="relative max-w-2xl bg-gray-700 border border-gray-600 rounded-xl px-4 py-3 shadow text-gray-100 text-sm">
-                        <div id="msg-text-${idx}" class="whitespace-pre-wrap">${escapeHtml(msg.content)}</div>
-                        <div id="msg-edit-area-${idx}" class="hidden mt-2">
-                            <textarea id="edit-input-${idx}" rows="3" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 font-sans text-sm focus:outline-none"></textarea>
-                            <div class="mt-2 flex space-x-2 justify-end">
-                                <button onclick="cancelEdit(${idx})" class="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded">Cancel</button>
-                                <button onclick="submitEdit(${idx})" class="text-xs bg-emerald-600 text-white px-2 py-1 rounded font-bold">Save Change</button>
-                            </div>
-                        </div>
-                        <button onclick="activateEditMode(${idx}, '${msg.role}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-gray-400 hover:text-emerald-400 text-xs transition bg-gray-800 p-1 rounded border border-gray-600 shadow">
-                            <i class="fa-regular fa-pen-to-square"></i> Edit
-                        </button>
-                    </div>
-                `;
+    <div class="text-xs text-gray-500 font-semibold px-2">${isUser ? 'User' : 'Simulator'}</div>
+
+    <div class="relative w-full ${isUser ? 'flex justify-end' : 'flex justify-start'}">
+        <div class="relative w-full max-w-4xl bg-gray-700 border border-gray-600 rounded-xl px-4 py-3 shadow text-gray-100 text-sm">
+
+            <div id="msg-text-${idx}" class="whitespace-pre-wrap break-words">
+                ${escapeHtml(msg.content)}
+            </div>
+
+            <div id="msg-edit-area-${idx}" class="hidden mt-3">
+                <textarea
+                    id="edit-input-${idx}"
+                    rows="10"
+                    class="w-full bg-gray-800 text-white border border-gray-600 rounded-lg p-3 font-sans text-sm resize-y focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                ></textarea>
+
+                <div class="mt-3 flex space-x-2 justify-end">
+                    <button
+                        onclick="cancelEdit(${idx})"
+                        class="text-sm bg-gray-600 hover:bg-gray-500 text-gray-200 px-4 py-2 rounded-lg transition"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        onclick="submitEdit(${idx})"
+                        class="text-sm bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold transition"
+                    >
+                        Save Change
+                    </button>
+                </div>
+            </div>
+
+            <button
+                onclick="activateEditMode(${idx}, '${msg.role}')"
+                class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-gray-400 hover:text-emerald-400 text-xs transition bg-gray-800 p-1 rounded border border-gray-600 shadow"
+            >
+                <i class="fa-regular fa-pen-to-square"></i> Edit
+            </button>
+
+        </div>
+    </div>
+`;
                 chatBox.appendChild(wrapper);
             });
             chatBox.scrollTop = chatBox.scrollHeight;

@@ -3,27 +3,20 @@
         "current_location": "A sheltered grove under a fruit-bearing tree",
         "inventory": [
             "Sweet fruits",
-            "charred wood scraps (from fire-making)",
-            "gathered leaves"
+            "Charred wood scraps (from fire-making)",
+            "Gathered leaves"
         ],
         "active_quests": []
     },
     "entities": {
-        "shadowy_figure": {
-            "location": "edge of the grove",
-            "status": "watching",
-            "description": "a shadowy figure watching from the edge of the grove"
+        "Glowing moss": {
+            "location": "Trees",
+            "state": "Pulses softly"
         },
-        "glowing_moss": {
-            "location": "trees",
-            "status": "active",
-            "description": "glowing moss on the trees"
-        },
-        "smoke_trail": {
-            "location": "distant hills",
-            "status": "rising",
-            "description": "a faint trail of smoke rising from the distant hills"
+        "Smoke trail": {
+            "location": "Distant hills",
+            "state": "Faint",
+            "visibility": "Fading"
         }
-    },
-    "narration": "The fire crackles, casting flickering light over your makeshift bed of leaves. The sweet fruits you gathered are gone, but their lingering warmth hums in your chest\u2014a strange, almost magical sensation. Your injury is gone, but your body feels lighter, as if something within you has shifted. The fire\u2019s glow reveals the forest\u2019s secrets: glowing moss on the trees, a faint trail of smoke rising from the distant hills, and a shadowy figure watching from the edge of the grove."
+    }
 }

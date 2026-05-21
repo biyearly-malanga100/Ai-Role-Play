@@ -2,7 +2,7 @@
 
 # 🧠 Dynamic RPG AI Companion
 
-### *An Experimental Agentic Roleplay Framework*
+### *An Agentic Roleplay Framework*
 
 Persistent memory • Evolving lore • Autonomous world updates
 
